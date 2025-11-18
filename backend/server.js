@@ -28,6 +28,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/tags", tagRoutes);
 
 // Health check
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", message: "Campus Connect API is running" });
 });
